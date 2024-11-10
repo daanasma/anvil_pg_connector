@@ -6,10 +6,18 @@ renamed: true
 runtime_options:
   client_version: '3'
   server_spec: {base: python310-minimal}
+  server_spec_disabled: {base: python310-minimal, requirements: SQLAlchemy}
   server_version: python3-sandbox
   version: 2
+secrets:
+  PG_PASSWORD:
+    type: secret
+    value: {KNEHPQUY76GEYIEH: fCBCgQS54wfA/Tud2PHF0fsBhh7/NmvgeaXjgU76wx8cT4krrXW5zdp4q03njuC1ayPULs0u3x1GMh2HDUgd10YKt36cfBPT7mFhuTLz+JPQ5fQATz+3ovQZnUzh211iDnd5M2ZE3O5RgI3tlEBg}
 services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/tables.yml
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/anvil/secrets.yml
 startup_form: Form1
